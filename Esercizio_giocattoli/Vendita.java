@@ -9,4 +9,8 @@ public class Vendita {
         this.cliente= cliente;
         this.giocattolo = giocattolo;
     }
+
+    public String toString(){
+        return giocattolo.toString() +" "+ cliente.toString();
+    }
 }
