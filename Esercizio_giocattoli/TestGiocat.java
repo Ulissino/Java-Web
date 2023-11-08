@@ -41,7 +41,11 @@ public class TestGiocat{
        System.out.println("Inserisci password: ");
        String pas = sc.nextLine();
 
-       if (user.equals(username) && pas.equals(pass) ) {
+       System.out.println("sei un utente registrato?");
+       String ris= sc.nextLine();
+
+       if (ris.equalsIgnoreCase("si")) {
+        if (user.equals(username) && pas.equals(pass) ) {
         System.out.println("------MENù------");
         System.out.println("1) Aggiungi il giocattolo nell'inventario");
         System.out.println("2) Rimuovi il giocattolo dell'inventario");
@@ -75,10 +79,59 @@ public class TestGiocat{
        }else{
         System.out.println("-----SEI UN UTENTE-----");
         inventario.visualizzaDati();
+
+        System.out.println("Vuoi acquistare un giocattolo?");
+        String rispo = sc.nextLine();
+
+        if (rispo.equalsIgnoreCase("si")) {
+            System.out.println("Inserisci l'id del giocattolo da comprare: ");
+            int id_giocattolo = sc.nextInt();
+
+            for (int i = 0; i < inventario.g.size(); i++) {
+                if (inventario.g.get(i).id == id_giocattolo) {
+                    System.out.println("Hai acquistato il seguente giocattolo!!");
+                    inventario.acquistaGiocattolo(id_giocattolo);
+                }
+            }
+        }
        }
+       }else{
+        if(ris.equalsIgnoreCase("no")){
 
+            System.out.println("Inserisci nome: ");
+            String nome = sc.nextLine();
 
+            System.out.println("Inserisci email: ");
+            String email = sc.nextLine();
 
+            System.out.println("Inserisci l'id: ");
+            int id_cliente = sc.nextInt();
 
+            System.out.println("Inserisci username: ");
+            String usernames = sc.nextLine();
+
+            System.out.println("Inserisci password: ");
+            String passw = sc.nextLine();
+
+            c.add(new Cliente(id_cliente,nome,email,usernames,passw));
+
+            inventario.visualizzaDati();
+
+            System.out.println("Vuoi acquistare un giocattolo?");
+            String rispo = sc.nextLine();
+
+            if (rispo.equalsIgnoreCase("si")) {
+                System.out.println("Inserisci l'id del giocattolo da comprare: ");
+                int id_giocattolo = sc.nextInt();
+
+                for (int i = 0; i < inventario.g.size(); i++) {
+                    if (inventario.g.get(i).id == id_giocattolo) {
+                        System.out.println("Hai acquistato il seguente giocattolo!!");
+                        inventario.acquistaGiocattolo(id_giocattolo);
+                }
+            }
+        }
+        }
+       }
     }
 }

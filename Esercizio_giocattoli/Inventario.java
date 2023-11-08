@@ -42,6 +42,15 @@ public class Inventario {
         }
     }
 
+    public void acquistaGiocattolo(int idrim){
+        for (int i = 0; i < g.size(); i++) {
+            if (g.get(i).id == idrim) {
+                g.remove(i);
+                break; //faccio il break in modo tale che quando si trova l'id del giocattolo lo rimuove e non continua il programma 
+            }
+        }
+    }
+
     public void visualizzaDati(){
         for (int i = 0; i < g.size(); i++) {
 
