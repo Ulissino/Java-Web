@@ -35,7 +35,7 @@ public class TestGiocat{
        System.out.println(v.toString());
        */
 
-       System.out.println("Ciao, Sei un utente registrato?"); // branch main
+       System.out.println("Ciao, Sei un utente registrato?"); // branch main prova 2
        String ris= sc.nextLine();
 
        System.out.println("Inserisci username: ");
