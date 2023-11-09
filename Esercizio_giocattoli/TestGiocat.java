@@ -35,14 +35,14 @@ public class TestGiocat{
        System.out.println(v.toString());
        */
 
+       System.out.println("Ciao, Sei un utente registrato?");
+       String ris= sc.nextLine();
+
        System.out.println("Inserisci username: ");
        String user = sc.nextLine();
 
        System.out.println("Inserisci password: ");
        String pas = sc.nextLine();
-
-       System.out.println("sei un utente registrato?");
-       String ris= sc.nextLine();
 
        if (ris.equalsIgnoreCase("si")) {
         if (user.equals(username) && pas.equals(pass) ) {
@@ -106,6 +106,8 @@ public class TestGiocat{
 
             System.out.println("Inserisci l'id: ");
             int id_cliente = sc.nextInt();
+
+            sc.nextLine();
 
             System.out.println("Inserisci username: ");
             String usernames = sc.nextLine();
